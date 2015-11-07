@@ -9,7 +9,7 @@ var Forum = React.createClass({
       <div>
         <MessageBoard messages={this.state.messages}/>
         <hr/>
-        <CommentForm/>
+        <CommentForm handleCreateMessage={this.handleCreateMessage}/>
       </div>
     )
   },
@@ -22,5 +22,11 @@ var Forum = React.createClass({
     $.get(this.props.loadMessagesUrl, function(messages){
       thiz.setState({messages: messages});
     });
+  },
+  handleCreateMessage: function(data){
+    var thiz = this;
+    $.post(this.props.createMessageUrl, data, function(){
+      thiz.loadMessages();
+    })
   }
 });
