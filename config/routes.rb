@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'forum/index'
-
+  get 'forum/messages' => "forum#load_messages", as: "load_messages"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
