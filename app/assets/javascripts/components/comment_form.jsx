@@ -14,9 +14,13 @@ var CommentForm = React.createClass({
       </form>
     )
   },
-  handleSubmit: function(){
-    var name=this.refs.name;
-    var content = this.refs.content
+  handleSubmit: function(e){
+    e.preventDefault();
+    var name=this.refs.name.value;
+    this.refs.name.value = "";
+    var content = this.refs.content.value;
+    this.refs.content.value = "";
     this.props.handleCreateMessage({name: name, content: content});
+
   }
 })

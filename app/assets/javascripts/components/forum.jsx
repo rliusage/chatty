@@ -15,7 +15,7 @@ var Forum = React.createClass({
   },
   componentDidMount: function(){
     this.loadMessages();
-    setInterval(this.loadMessages, 300)
+    setInterval(this.loadMessages, 1000)
   },
   loadMessages: function(){
     var thiz = this;
