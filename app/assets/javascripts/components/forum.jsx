@@ -1,4 +1,9 @@
 var Forum = React.createClass({
+  getInitialState: function(){
+    return {
+      messages: []
+    }
+  },
   render: function(){
     return (
       <div>
@@ -15,7 +20,7 @@ var Forum = React.createClass({
   loadMessages: function(){
     var thiz = this;
     $.get(this.props.loadMessagesUrl, function(messages){
-      thiz.states.messages = messages;
+      thiz.setState({messages: messages});
     });
   }
 });

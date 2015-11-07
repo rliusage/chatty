@@ -5,12 +5,11 @@ var Message = React.createClass({
         <div className="panel panel-default">
           <div className="panel-heading">
             <h4 className="panel-title">
-              <a data-toggle="collapse" href="#collapse1">{this.props.name}</a>
+              <a data-toggle="collapse" href={'#'+ this.props.panelId}>{this.props.name + " " + this.props.createdAt}</a>
             </h4>
           </div>
-          <div id="collapse1" className="panel-collapse collapse">
-            <div className="panel-body">{this.props.message}</div>
-            <div className="panel-footer">{this.props.createdAt}</div>
+          <div id={this.props.panelId} className="panel-collapse collapse">
+            <div className="panel-body">{this.props.content}</div>
           </div>
         </div>
       </div>
